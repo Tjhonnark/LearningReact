@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import './Task.css'
 
 class Task extends Component {
+
+    StyleCompleted() {
+        return {
+            fontSize: '30px',
+            color: this.props.task.done ? 'blue': 'black',
+            textDecoration: 'none'
+        }
+    }
+
     render() {
         const {task} = this.props;
 
-        return <div className="red"> 
+        return <div style={this.StyleCompleted()}> 
             {task.id} --
             {task.title} --
             {task.description}--
