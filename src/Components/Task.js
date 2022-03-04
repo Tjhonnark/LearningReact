@@ -6,10 +6,9 @@ class Task extends Component {
         return {
             fontSize: '30px',
             color: this.props.task.done ? 'blue': 'black',
-            textDecoration: 'none'
+            textDecoration: this.props.task.done ? 'line-through' : 'none'
         }
     }
-
     render() {
         const {task} = this.props;
 
